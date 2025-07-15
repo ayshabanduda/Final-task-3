@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cake bakers</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+    ></script>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="w-screen overflow-x-hidden">
+    <div
+      class="flex justify-around text-center items-center w-full h-20 border"
+    >
+      <div class="sm:flex gap-4 hidden">
+        <div class="dropdown-selection-alt">
+          <sl-dropdown>
+            <sl-button slot="trigger" size="small" class="border-none" caret
+              >USD</sl-button
+            >
+            <sl-menu size="small">
+              <sl-menu-item value="USD" style="--font-size: 10px"
+                >USD</sl-menu-item
+              >
+              <sl-menu-item value="EUR" style="--font-size: 10px">
+                EUR</sl-menu-item
+              >
+            </sl-menu>
+          </sl-dropdown>
+        </div>
+
+        <script>
+          const container = document.querySelector(".dropdown-selection-alt");
+          const USD = container.querySelector('sl-menu-item[value="USD"]');
+          const EUR = container.querySelector('sl-menu-item[value="EUR"]');
+
+          USD.addEventListener("click", () => console.log("USD"));
+          EUR.addEventListener("click", () => console.log("EUR"));
+        </script>
+        <p>|</p>
+        <div class="dropdown-selection-alt">
+          <sl-dropdown>
+            <sl-button slot="trigger" size="small" class="border-none" caret
+              >ENG</sl-button
+            >
+            <sl-menu size="small">
+              <sl-menu-item value="ENG" style="--font-size: 10px"
+                >ENG</sl-menu-item
+              >
+              <sl-menu-item value="SPANISH" style="--font-size: 10px">
+                SPANISH</sl-menu-item
+              >
+            </sl-menu>
+          </sl-dropdown>
+        </div>
+
+        <script>
+          const container1 = document.querySelector(".dropdown-selection-alt");
+          const ENG = container1.querySelector('sl-menu-item[value="ENG"]');
+          const SPANISH = container1.querySelector(
+            'sl-menu-item[value="SPANISH"]'
+          );
+
+          ENG.addEventListener("click", () => console.log("ENG"));
+          SPANISH.addEventListener("click", () => console.log("SPANISH"));
+        </script>
+
+        <p>|</p>
+        <div class="dropdown-selection-alt">
+          <sl-dropdown>
+            <sl-button slot="trigger" size="small" class="border-none" caret
+              >SIGN IN</sl-button
+            >
+            <sl-menu size="small">
+              <sl-menu-item value="signin" style="--font-size: 10px"
+                >signin</sl-menu-item
+              >
+              <sl-menu-item value="signup" style="--font-size: 10px">
+                signup</sl-menu-item
+              >
+            </sl-menu>
+          </sl-dropdown>
+        </div>
+
+        <script>
+          const container2 = document.querySelector(".dropdown-selection-alt");
+          const Signin = container2.querySelector(
+            'sl-menu-item[value="Signin"]'
+          );
+          const signup = container2.querySelector(
+            'sl-menu-item[value="signup"]'
+          );
+
+          Signin.addEventListener("click", () => console.log("Signin"));
+          signup.addEventListener("click", () => console.log("signup"));
+        </script>
+      </div>
+
+      <div class="">
+        <img src="./img/logo.png.webp" alt="" />
+      </div>
+
+      <div class="sm:flex hidden">
+        <svg
+          class="w-10 h-5 text-gray-800 dark:text-black"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+            d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+          />
+        </svg>
+        <p>|</p>
+        <svg
+          class="w-10 h-5 text-gray-800 dark:text-black"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+          />
+        </svg>
+
+        <svg
+          class="w-10 h-5 text-gray-800 dark:text-black"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"
+          />
+        </svg>
+
+        <p>Cart: $0.00</p>
+      </div>
+
+      <svg
+        class="w-6 h-6t-white sm:hidden bg-ambebltext-black"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="#ffffff"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-width="2"
+          d="M5 7h14M5 12h14M5 17h14"
+        />
+      </svg>
+    </div>
+
+    <header class="w-full">
+      <nav
+        class="bg-orange-600 hidden text-white text-xs sm:flex justify-between sm:justify-around w-full items-center h-15"
+      >
+        <div class="hidden sm:flex justify-around gap-5 text-xs font-bold">
+          <a href="/src/index.html
+          " class="hover:bg-black duration-300 transition-all p-5"
+            >HOME</a
+          >
+          <a
+            href="./about.html"
+            class="hover:bg-black duration-300 transition-all p-5"
+            >ABOUT</a
+          >
+          <a
+            href="./package.html"
+            class="hover:bg-black duration-300 transition-all p-5"
+            >SHOP</a
+          >
+          <a
+            href="./pages.html"
+            class="hover:bg-black duration-300 transition-all p-5"
+            >PAGES</a
+          >
+          <a
+            href="./blog.html"
+            class="hover:bg-black duration-300 transition-all p-5"
+            >BLOG</a
+          >
+          <a
+            href="./contact.html"
+            class="hover:bg-black duration-300 transition-all p-5"
+            >CONTACT</a
+          >
+        </div>
+
+        <svg
+          class="w-6 h-6t-white sm:hidden bg-ambebltext-black"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="#ffffff"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+            d="M5 7h14M5 12h14M5 17h14"
+          />
+        </svg>
+      </nav>
+
+      <div class="bg-[url(/src/img/hero-1.jpg)] bg-cover h-96 w-full relative">
+        <div
+          class="absolute p-15 bg-white text-black top-20 sm:left-70 flex sm:gap-5 gap-4 items-center flex-col text-center"
+        >
+        <P>SHOP</P>
+          <h1 class="text-2xl sm:text-4xl font-bold">
+            Making Your Life Swetter <br />One Bite At A Time
+          </h1>
+
+          <div class="flex gap-5 sm:text-xl text-xs">
+            <sl-button variant="warning" class="sm:text-xl text-xs"
+              >Our Cakes</sl-button
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+   <div class="grid sm:grid-cols-4 place-items-center pt-20 pb-20 gap-y-8">
+      <div class="">
+        <sl-card class="card-overview group">
+          <img
+            slot="image"
+            src="/src/img/product-1.jpg"
+            alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+            class="group-hover:scale-120 duration-300 transition-all"
+          />
+
+          <strong>Dozen Cupcakes</strong><br />
+          <div class="flex justify-between items-center">
+            <small>$49</small>
+            <sl-button variant="warning" size="small" pill>SHOP NOW</sl-button>
+          </div>
+          <sl-rating></sl-rating>
+        </sl-card>
+      </div>
+
+      <div class="">
+        <sl-card class="card-overview group">
+          <img
+            slot="image"
+            src="/src/img/product-2.jpg"
+            alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+            class="group-hover:scale-120 duration-300 transition-all"
+          />
+
+          <strong>Dozen Cupcakes</strong><br />
+          <div class="flex justify-between items-center">
+            <small>$49</small>
+            <sl-button variant="warning" size="small" pill>SHOP NOW</sl-button>
+          </div>
+          <sl-rating></sl-rating>
+        </sl-card>
+      </div>
+
+      <div class="">
+        <sl-card class="card-overview group">
+          <img
+            slot="image"
+            src="/src/img/product-3.jpg"
+            alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+            class="group-hover:scale-120 duration-300 transition-all"
+          />
+
+          <strong>Dozen Cupcakes</strong><br />
+          <div class="flex justify-between items-center">
+            <small>$49</small>
+            <sl-button variant="warning" size="small" pill>SHOP NOW</sl-button>
+          </div>
+          <sl-rating></sl-rating>
+        </sl-card>
+      </div>
+
+      <div class="">
+        <sl-card class="card-overview group">
+          <img
+            slot="image"
+            src="/src/img/product-4.jpg"
+            alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+            class="group-hover:scale-120 duration-300 transition-all"
+          />
+
+          <strong>Dozen Cupcakes</strong><br />
+          <div class="flex justify-between items-center">
+            <small>$49</small>
+            <sl-button variant="warning" size="small" pill>SHOP NOW</sl-button>
+          </div>
+          <sl-rating></sl-rating>
+        </sl-card>
+      </div>
+
+      <div class="">
+        <sl-card class="card-overview group">
+          <img
+            slot="image"
+            src="/src/img/product-5.jpg"
+            alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+            class="group-hover:scale-120 duration-300 transition-all"
+          />
+
+          <strong>Dozen Cupcakes</strong><br />
+          <div class="flex justify-between items-center">
+            <small>$49</small>
+            <sl-button variant="warning" size="small" pill>SHOP NOW</sl-button>
+          </div>
+          <sl-rating></sl-rating>
+        </sl-card>
+      </div>
+
+      <div class="">
+        <sl-card class="card-overview group">
+          <img
+            slot="image"
+            src="/src/img/product-6.jpg"
+            alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+            class="group-hover:scale-120 duration-300 transition-all"
+          />
+
+          <strong>Dozen Cupcakes</strong><br />
+          <div class="flex justify-between items-center">
+            <small>$49</small>
+            <sl-button variant="warning" size="small" pill>SHOP NOW</sl-button>
+          </div>
+          <sl-rating></sl-rating>
+        </sl-card>
+      </div>
+
+      <div class="">
+        <sl-card class="card-overview group">
+          <img
+            slot="image"
+            src="/src/img/product-7.jpg"
+            alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+            class="group-hover:scale-120 duration-300 transition-all"
+          />
+
+          <strong>Dozen Cupcakes</strong><br />
+          <div class="flex justify-between items-center">
+            <small>$49</small>
+            <sl-button variant="warning" size="small" pill>SHOP NOW</sl-button>
+          </div>
+          <sl-rating></sl-rating>
+        </sl-card>
+      </div>
+
+      <div class="">
+        <sl-card class="card-overview group">
+          <img
+            slot="image"
+            src="/src/img/product-8.jpg"
+            alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+            class="group-hover:scale-120 duration-300 transition-all"
+          />
+
+          <strong>Dozen Cupcakes</strong><br />
+          <div class="flex justify-between items-center">
+            <small>$49</small>
+            <sl-button variant="warning" size="small" pill>SHOP NOW</sl-button>
+          </div>
+          <sl-rating></sl-rating>
+        </sl-card>
+      </div>
+
+      <style>
+        .card-overview {
+          max-width: 200px;
+        }
+
+        .card-overview small {
+          color: var(--sl-color-neutral-500);
+        }
+
+        .card-overview [slot="footer"] {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .card-overview [slot="footer"] {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+        }
+
+        sl-rating {
+          font-size: 0.3rem;
+        }
+        @media (width <= 40rem) {
+          .card-overview {
+            max-width: 500px;
+          }
+        }
+        /* 
+          sl-button::part(base) {
+            padding: 0.3rem 0.6rem;
+            font-size: 0.75rem;
+          } */
+      </style>
+    </div>
+
+  
+
+
+
+
+    <footer
+      class="sm:flex bg-gray-100 text-black h-auto sm:h-80 text-xs justify-around items-center"
+    >
+      <div class="flex flex-col w-70 gap-5">
+        <img src="/src/img/logo.png.webp" alt="" class="w-50" />
+
+        <p class="text-xs">
+          Which morning fourth great won't is to fly bearing man. Called unto
+          shall seed, deep, herb set seed land divide after over first creeping.
+          First creature set upon stars deep male gathered said she'd an image
+          spirit our
+        </p>
+      </div>
+
+      <div class="w-70 flex flex-col gap-3">
+        <h1 class="text-2xl font-bold">contact us</h1>
+        <div class="flex">
+          <svg
+            class="w-6 h-6 text-gray-200"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M11.906 1.994a8.002 8.002 0 0 1 8.09 8.421 7.996 7.996 0 0 1-1.297 3.957.996.996 0 0 1-.133.204l-.108.129c-.178.243-.37.477-.573.699l-5.112 6.224a1 1 0 0 1-1.545 0L5.982 15.26l-.002-.002a18.146 18.146 0 0 1-.309-.38l-.133-.163a.999.999 0 0 1-.13-.202 7.995 7.995 0 0 1 6.498-12.518ZM15 9.997a3 3 0 1 1-5.999 0 3 3 0 0 1 5.999 0Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+
+          <p>1234 Some St San Francisco, CA 94102, US 1.800.123.4567</p>
+        </div>
+
+        <div class="flex">
+          <svg
+            class="w-6 h-6 text-gray-200"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.978 4a2.553 2.553 0 0 0-1.926.877C4.233 6.7 3.699 8.751 4.153 10.814c.44 1.995 1.778 3.893 3.456 5.572 1.68 1.679 3.577 3.018 5.57 3.459 2.062.456 4.115-.073 5.94-1.885a2.556 2.556 0 0 0 .001-3.861l-1.21-1.21a2.689 2.689 0 0 0-3.802 0l-.617.618a.806.806 0 0 1-1.14 0l-1.854-1.855a.807.807 0 0 1 0-1.14l.618-.62a2.692 2.692 0 0 0 0-3.803l-1.21-1.211A2.555 2.555 0 0 0 7.978 4Z"
+            />
+          </svg>
+
+          <p>(123) 456 78 90</p>
+        </div>
+
+        <div class="">
+          <svg
+            class="w-6 h-6 text-gray-200"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M2.038 5.61A2.01 2.01 0 0 0 2 6v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6c0-.12-.01-.238-.03-.352l-.866.65-7.89 6.032a2 2 0 0 1-2.429 0L2.884 6.288l-.846-.677Z"
+            />
+            <path
+              d="M20.677 4.117A1.996 1.996 0 0 0 20 4H4c-.225 0-.44.037-.642.105l.758.607L12 10.742 19.9 4.7l.777-.583Z"
+            />
+          </svg>
+
+          <p>support@axiomthemes.com</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <h1 class="text-2xl font-bold">Opening Hours</h1>
+        <p>Monday ...................... Closed</p>
+        <p>Tue-Fri .............. 10 am - 12 pm</p>
+        <p>Sat-Sun ............... 8 am - 11 pm</p>
+        <p>Holidays ............. 10 am - 12 pm</p>
+      </div>
+    </footer>
+  </body>
+</html>
